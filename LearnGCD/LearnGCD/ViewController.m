@@ -46,6 +46,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self interview1];
     [self interview2];
+    [self interview3];
     [self solve];
     [self syncSerial];
     [self apply];
@@ -126,6 +127,26 @@
     [self performSelector:@selector(interviewTest) onThread:thread withObject:nil waitUntilDone:YES];
 }
 
+// 头条面试题
+- (void)interview3 {
+    dispatch_queue_t main_thread = dispatch_get_main_queue();
+    dispatch_queue_t globe_thread = dispatch_get_global_queue(0, 0);
+//    dispatch_async(main_thread, ^{
+//        // 产生了死锁
+//        // 同步主队列在主线程中调用  ->  syncSerial
+//        dispatch_sync(main_thread, ^{
+//            NSLog(@"123");
+//        });
+//        NSLog(@"456");
+//    });
+    // 解决
+    dispatch_async(main_thread, ^{
+        dispatch_sync(globe_thread, ^{
+            NSLog(@"789");
+        });
+        NSLog(@"abc");
+    });
+}
 
 -(void)interviewTest {
     NSLog(@"2");
