@@ -1,15 +1,15 @@
 //
-//  YZpthread_mutex_recursive.m
+//  YZpthread_mutex_condition.m
 //  LearnGCD
 //
 //  Created by ios on 2019/2/13.
 //  Copyright © 2019 KN. All rights reserved.
 //
 
-#import "YZpthread_mutex_recursive.h"
+#import "YZpthread_mutex_condition.h"
 #import <pthread.h>
 
-@interface YZpthread_mutex_recursive()
+@interface YZpthread_mutex_condition()
 
 // money
 @property(nonatomic,assign)NSInteger cash;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation YZpthread_mutex_recursive
+@implementation YZpthread_mutex_condition
 
 - (instancetype)init
 {
@@ -27,9 +27,9 @@
     if (self) {
         pthread_mutexattr_t attr;
         pthread_mutexattr_init(&attr);
-        pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+        // NULL 就是default（normal）
+        pthread_mutexattr_settype(&attr, NULL);
         pthread_mutex_init(&_lock, &attr);
-        pthread_mutexattr_destroy(&attr);
         [self test];
     }
     return self;

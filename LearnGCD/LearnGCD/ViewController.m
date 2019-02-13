@@ -48,7 +48,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[YZpthread_mutex alloc]init];
+    [[YZpthread_mutex_recursive alloc]init];
     
 }
 

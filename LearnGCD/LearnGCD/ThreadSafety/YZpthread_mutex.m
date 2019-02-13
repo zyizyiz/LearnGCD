@@ -66,4 +66,9 @@
     NSLog(@"存了100,还剩%li",(long)_cash);
     pthread_mutex_unlock(&_lock);
 }
+
+- (void)dealloc
+{
+    pthread_mutex_destroy(&_lock);
+}
 @end

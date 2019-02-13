@@ -19,6 +19,7 @@
 		8192A25D22140BDA009B36EE /* YZos_unfair_lock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A25C22140BDA009B36EE /* YZos_unfair_lock.m */; };
 		8192A26022140EB5009B36EE /* YZpthread_mutex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A25F22140EB5009B36EE /* YZpthread_mutex.m */; };
 		8192A26322141473009B36EE /* YZpthread_mutex_recursive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A26222141473009B36EE /* YZpthread_mutex_recursive.m */; };
+		8192A2662214180D009B36EE /* YZpthread_mutex_condition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A2652214180D009B36EE /* YZpthread_mutex_condition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		8192A25F22140EB5009B36EE /* YZpthread_mutex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZpthread_mutex.m; sourceTree = "<group>"; };
 		8192A26122141473009B36EE /* YZpthread_mutex_recursive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZpthread_mutex_recursive.h; sourceTree = "<group>"; };
 		8192A26222141473009B36EE /* YZpthread_mutex_recursive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZpthread_mutex_recursive.m; sourceTree = "<group>"; };
+		8192A2642214180D009B36EE /* YZpthread_mutex_condition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZpthread_mutex_condition.h; sourceTree = "<group>"; };
+		8192A2652214180D009B36EE /* YZpthread_mutex_condition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZpthread_mutex_condition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				8192A25F22140EB5009B36EE /* YZpthread_mutex.m */,
 				8192A26122141473009B36EE /* YZpthread_mutex_recursive.h */,
 				8192A26222141473009B36EE /* YZpthread_mutex_recursive.m */,
+				8192A2642214180D009B36EE /* YZpthread_mutex_condition.h */,
+				8192A2652214180D009B36EE /* YZpthread_mutex_condition.m */,
 			);
 			path = ThreadSafety;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8192A25D22140BDA009B36EE /* YZos_unfair_lock.m in Sources */,
+				8192A2662214180D009B36EE /* YZpthread_mutex_condition.m in Sources */,
 				8192A25A221404FF009B36EE /* YZOSSpinLock.m in Sources */,
 				8147E22B21E394A200A7FF82 /* ViewController.m in Sources */,
 				8147E23621E394A200A7FF82 /* main.m in Sources */,
