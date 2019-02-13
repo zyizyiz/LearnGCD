@@ -28,11 +28,18 @@
  dispatch_semaphore : 信号量机制，信号量为0时阻塞线程 用于保证线程安全
  */
 #import "ViewController.h"
+#import "YZOSSpinLock.h"
+#import "YZos_unfair_lock.h"
+#import "YZpthread_mutex.h"
+#import "YZpthread_mutex_recursive.h"
+
 
 #define ThreadName "com.1-chengzi.learnGCD"
 
 @interface ViewController ()
 
+// money
+@property(nonatomic,assign)NSInteger cash;
 @end
 
 @implementation ViewController
@@ -40,7 +47,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [[YZpthread_mutex alloc]init];
+    
 }
+
+
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

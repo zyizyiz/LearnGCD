@@ -15,6 +15,10 @@
 		8147E23621E394A200A7FF82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8147E23521E394A200A7FF82 /* main.m */; };
 		8147E24021E394A200A7FF82 /* LearnGCDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8147E23F21E394A200A7FF82 /* LearnGCDTests.m */; };
 		8147E24B21E394A200A7FF82 /* LearnGCDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8147E24A21E394A200A7FF82 /* LearnGCDUITests.m */; };
+		8192A25A221404FF009B36EE /* YZOSSpinLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A259221404FF009B36EE /* YZOSSpinLock.m */; };
+		8192A25D22140BDA009B36EE /* YZos_unfair_lock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A25C22140BDA009B36EE /* YZos_unfair_lock.m */; };
+		8192A26022140EB5009B36EE /* YZpthread_mutex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A25F22140EB5009B36EE /* YZpthread_mutex.m */; };
+		8192A26322141473009B36EE /* YZpthread_mutex_recursive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8192A26222141473009B36EE /* YZpthread_mutex_recursive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		8147E24621E394A200A7FF82 /* LearnGCDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnGCDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8147E24A21E394A200A7FF82 /* LearnGCDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnGCDUITests.m; sourceTree = "<group>"; };
 		8147E24C21E394A200A7FF82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8192A258221404FF009B36EE /* YZOSSpinLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZOSSpinLock.h; sourceTree = "<group>"; };
+		8192A259221404FF009B36EE /* YZOSSpinLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZOSSpinLock.m; sourceTree = "<group>"; };
+		8192A25B22140BDA009B36EE /* YZos_unfair_lock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZos_unfair_lock.h; sourceTree = "<group>"; };
+		8192A25C22140BDA009B36EE /* YZos_unfair_lock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZos_unfair_lock.m; sourceTree = "<group>"; };
+		8192A25E22140EB5009B36EE /* YZpthread_mutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZpthread_mutex.h; sourceTree = "<group>"; };
+		8192A25F22140EB5009B36EE /* YZpthread_mutex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZpthread_mutex.m; sourceTree = "<group>"; };
+		8192A26122141473009B36EE /* YZpthread_mutex_recursive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZpthread_mutex_recursive.h; sourceTree = "<group>"; };
+		8192A26222141473009B36EE /* YZpthread_mutex_recursive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZpthread_mutex_recursive.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,7 @@
 		8147E22521E394A200A7FF82 /* LearnGCD */ = {
 			isa = PBXGroup;
 			children = (
+				8192A25722140409009B36EE /* ThreadSafety */,
 				8147E22621E394A200A7FF82 /* AppDelegate.h */,
 				8147E22721E394A200A7FF82 /* AppDelegate.m */,
 				8147E22921E394A200A7FF82 /* ViewController.h */,
@@ -130,6 +143,21 @@
 				8147E24C21E394A200A7FF82 /* Info.plist */,
 			);
 			path = LearnGCDUITests;
+			sourceTree = "<group>";
+		};
+		8192A25722140409009B36EE /* ThreadSafety */ = {
+			isa = PBXGroup;
+			children = (
+				8192A258221404FF009B36EE /* YZOSSpinLock.h */,
+				8192A259221404FF009B36EE /* YZOSSpinLock.m */,
+				8192A25B22140BDA009B36EE /* YZos_unfair_lock.h */,
+				8192A25C22140BDA009B36EE /* YZos_unfair_lock.m */,
+				8192A25E22140EB5009B36EE /* YZpthread_mutex.h */,
+				8192A25F22140EB5009B36EE /* YZpthread_mutex.m */,
+				8192A26122141473009B36EE /* YZpthread_mutex_recursive.h */,
+				8192A26222141473009B36EE /* YZpthread_mutex_recursive.m */,
+			);
+			path = ThreadSafety;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8192A25D22140BDA009B36EE /* YZos_unfair_lock.m in Sources */,
+				8192A25A221404FF009B36EE /* YZOSSpinLock.m in Sources */,
 				8147E22B21E394A200A7FF82 /* ViewController.m in Sources */,
 				8147E23621E394A200A7FF82 /* main.m in Sources */,
+				8192A26322141473009B36EE /* YZpthread_mutex_recursive.m in Sources */,
 				8147E22821E394A200A7FF82 /* AppDelegate.m in Sources */,
+				8192A26022140EB5009B36EE /* YZpthread_mutex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
